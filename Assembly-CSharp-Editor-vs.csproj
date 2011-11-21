@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>9.0.21022</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{C8605BA3-0157-0288-A540-4C67D3717149}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_3_4_2;UNITY_3_4;UNITY_EDITOR;ENABLE_PROFILER;UNITY_ANDROID;ENABLE_GENERICS;ENABLE_TERRAIN;ENABLE_NETWORK;ENABLE_WWW;ENABLE_DUCK_TYPING</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Editor\QCAR\Scripts\AccessorFactory.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\ConfigData.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\ConfigDataManager.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\ConfigParser.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\ImageTargetAccessor.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\ImageTargetEditor.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\ImportConflictWindow.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\MarkerAccessor.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\MarkerEditor.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\MultiTargetAccessor.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\MultiTargetEditor.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\QCARHelpMenu.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\QCARSettingsWindow.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\QCARUtilities.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\SceneManager.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\TargetDataPostprocessor.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\TrackableAccessor.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\TrackerEditor.cs" />
+     <Compile Include="Assets\Editor\QCAR\Scripts\VirtualButtonEditor.cs" />
+     <None Include="Assets\License_Readme.txt" />
+     <None Include="Assets\license.txt" />
+     <None Include="Assets\Qualcomm Augmented Reality\Shaders\DepthMask.shader" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\StreamingAssets\QCAR\config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-vs.csproj">
+      <Project>{BEC89A45-9804-02E7-B29F-AC2A648FFAED}</Project>
+      <Name>Assembly-CSharp-vs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
+	

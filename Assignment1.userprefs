@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ViennaUT_SDK\Interaction\InteractionTechniques\MobileInteractionByDeviceOrientation.cs">
+    <Files>
+      <File FileName="Assets\ViennaUT_SDK\Interaction\InteractionTechniques\MobileInteractionByTouch.cs" Line="84" Column="62" />
+      <File FileName="Assets\ViennaUT_SDK\Interaction\InteractionTechniques\MobileInteractionByDeviceOrientation.cs" Line="22" Column="92" />
+      <File FileName="Assets\ViennaUT_SDK\Interaction\InteractionFramework\MobileObjectSelectionBase.cs" Line="25" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
