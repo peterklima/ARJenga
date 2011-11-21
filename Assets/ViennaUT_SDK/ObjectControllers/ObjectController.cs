@@ -34,6 +34,7 @@ public class ObjectController : MonoBehaviour
     {
 		transform.rotation= rotate * selectTimeRot;
 		transform.position = translation - (rotate * (grabPoint - selectTimePos) - grabPoint);
+
     }
 	
     /// <summary>
