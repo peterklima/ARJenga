@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+
+Project("{D861F0F7-9B13-9AFC-6370-32EFC0C68B52}") = "ARJenga", "Assembly-CSharp.csproj", "{D3A5E7A4-F0A8-34CC-6BCE-35FD84260A22}"
+EndProject
+Project("{D861F0F7-9B13-9AFC-6370-32EFC0C68B52}") = "ARJenga", "Assembly-CSharp-Editor.csproj", "{0556BF55-F509-0BFA-3CCB-3C3AA10C1B51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3A5E7A4-F0A8-34CC-6BCE-35FD84260A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3A5E7A4-F0A8-34CC-6BCE-35FD84260A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3A5E7A4-F0A8-34CC-6BCE-35FD84260A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3A5E7A4-F0A8-34CC-6BCE-35FD84260A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0556BF55-F509-0BFA-3CCB-3C3AA10C1B51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0556BF55-F509-0BFA-3CCB-3C3AA10C1B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0556BF55-F509-0BFA-3CCB-3C3AA10C1B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0556BF55-F509-0BFA-3CCB-3C3AA10C1B51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	
+EndGlobal

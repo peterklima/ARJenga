@@ -1,0 +1,74 @@
+#  ==========================================================================
+#  Wavefront Material file
+#  Exported by Red-i Productions' "Riptide Pro"
+#  (a commercial plugin for Cinema 4D PC & Mac, R9.6 or later)
+#  
+#  Red-i Productions
+#  http://skinprops.com
+#  
+#  ==========================================================================
+
+newmtl MacAlu
+Ns 50.781250
+illum 2
+Ka 1.000000 1.000000 1.000000
+Kd 0.903226 0.903226 0.903226
+
+newmtl Neutral
+illum 2
+Kd 0.322581 0.322581 0.322581
+
+newmtl Screen
+Ns 50.781250
+illum 2
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+map_Ka iPhone_Screen.tif
+map_Kd iPhone_Screen.tif
+
+newmtl Home
+Ns 50.781250
+illum 2
+Kd 0.800000 0.800000 0.800000
+map_Kd home.tif
+
+newmtl Grill
+Ns 50.781250
+illum 2
+Kd 0.800000 0.800000 0.800000
+map_Kd grill.jpg
+bump grill.jpg
+
+newmtl default_Mat
+illum 2
+Kd 0.800000 0.800000 0.800000
+
+newmtl Lens
+Ns 50.781250
+d 0.000000
+Ni 1.490000
+illum 2
+Ka 0.000000 0.000000 0.200000
+Kd 0.800000 0.800000 0.800000
+
+newmtl Back
+Ns 50.781250
+illum 2
+Kd 0.800000 0.800000 0.800000
+map_Kd iphone-back-cover.tga
+
+newmtl Chrome_(sort_of)
+Ns 50.781250
+illum 2
+Kd 1.000000 1.000000 1.000000
+
+newmtl Default_black
+Ns 50.781250
+illum 2
+Kd 0.000000 0.000000 0.000000
+
+newmtl Aniso
+Ns 50.781250
+illum 2
+Kd 0.800000 0.800000 0.800000
+map_Kd aniso.tif
