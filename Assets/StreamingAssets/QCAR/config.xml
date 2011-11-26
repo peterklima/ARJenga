@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget size="200 200" name="hurricane" />
+    <ImageTarget size="35.34777 50" name="ARJenga" />
   </Tracking>
 </QCARConfig>

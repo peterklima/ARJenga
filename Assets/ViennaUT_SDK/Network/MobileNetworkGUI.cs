@@ -135,6 +135,11 @@ public class MobileNetworkGUI : MonoBehaviour {
         Debug.Log("NetworkGUI Setname to:"+name);
         playerName = name;
     }
+	
+	public virtual string getName()
+    {
+        return playerName;
+    }
     
     
     /// <summary>

@@ -171,6 +171,15 @@ public abstract class MobileObjectSelectionBase: ObjectSelectionBase
 						return;
 					}
 					
+					// check if this collidee has a network object controller (restricted access)
+					/*NetworkObjectController noc = collidee.GetComponent<NetworkObjectController>();
+					GameObject guiObject = GameObject.Find("GUIObj");
+					MobileNetworkGUI mng = guiObject.GetComponent<MobileNetworkGUI>();
+					if (!noc.IsObjectAccessGranted(UserManager.instance.getNetworkPlayer(mng.getName()))) {
+						Debug.Log("access denied");
+						return;
+					}*/
+					
 					//new object - add to collidees
 					Debug.Log("add object to collidees");
 					

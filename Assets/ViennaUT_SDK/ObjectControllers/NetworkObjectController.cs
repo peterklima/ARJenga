@@ -87,6 +87,11 @@ public class NetworkObjectController : ObjectController
     {
         return true;
     }
+	
+	public virtual bool IsObjectAccessGranted(NetworkPlayer player)
+    {
+        return isObjectAccessGranted(player);
+    }
 
 
     /// <summary>
