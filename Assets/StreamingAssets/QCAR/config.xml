@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget size="35.34777 50" name="ARJenga" />
+    <ImageTarget size="200.0684 283" name="ARJenga">
+      <VirtualButton name="VirtualButton1" rectangle="-98.38546 -53.51318 43.11454 -138.4131" enabled="true" sensitivity="low" />
+    </ImageTarget>
+    <ImageTarget size="200.0684 283" name="ARJenga2" />
   </Tracking>
 </QCARConfig>

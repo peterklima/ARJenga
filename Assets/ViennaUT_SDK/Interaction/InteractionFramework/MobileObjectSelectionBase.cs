@@ -45,6 +45,8 @@ public abstract class MobileObjectSelectionBase: ObjectSelectionBase
 	protected GameObject arCam;
 	protected TrackableEventHandler trackableEventHandler;
 	
+	protected VirtualButtonBehaviour mVirtualButton1;
+	
 	public void Start()
     {   	
 		imageTarget = GameObject.Find("ImageTarget");
@@ -53,6 +55,15 @@ public abstract class MobileObjectSelectionBase: ObjectSelectionBase
 		Debug.Log("################################### found arcam");
 		trackableEventHandler = imageTarget.GetComponent<TrackableEventHandler>();
 		Debug.Log("################################### found trackableEventHandler");    
+		
+		//Get VirtualButton
+		//IVirtualButtonEventHandler?
+		VirtualButtonBehaviour[] vbs = imageTarget.GetComponentsInChildren<VirtualButtonBehaviour>();
+        mVirtualButton1 = vbs[0];                 
+		
+		//GameObject virtualButton1 = GameObject.Find("VirtualButton1");
+		//mVirtualButton1 = virtualButton1.GetComponent<VirtualButtonBehaviour>();
+		Debug.Log("################################### found mVirtualButton1");
 	}
 	
 	
@@ -216,6 +227,18 @@ public abstract class MobileObjectSelectionBase: ObjectSelectionBase
 		if(doGUIConfirm) {
 			//we have the interaction window open
 			// no need to translate or so
+			return;
+		}
+		
+		VirtualButtonBehaviour[] vbs = imageTarget.GetComponentsInChildren<VirtualButtonBehaviour>();
+        mVirtualButton1 = vbs[0];   
+		
+		Debug.Log("Name:"+mVirtualButton1.enabled+" "+mVirtualButton1.Pressed);
+		if(mVirtualButton1.Pressed)
+		{
+			Debug.Log("##### Virtual button pressed");
+			mIsInteractionMethodRestart = true;
+			doGUIConfirm = true;
 			return;
 		}
 			
