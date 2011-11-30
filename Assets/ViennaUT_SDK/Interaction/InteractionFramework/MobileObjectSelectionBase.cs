@@ -37,6 +37,9 @@ public abstract class MobileObjectSelectionBase: ObjectSelectionBase
 	/** true if the switch interaction menu should be displayed */
 	protected bool mIsInteractionMethodMenu = false;
 	
+	protected bool mIsInteractionMethodRestart = false;
+	protected bool mIsInteractionMethodRestartCredits= false;
+	
 	// our singleton game objects
 	protected GameObject imageTarget;
 	protected GameObject arCam;
@@ -62,9 +65,22 @@ public abstract class MobileObjectSelectionBase: ObjectSelectionBase
 		if(doGUIConfirm) {
 			if(mIsInteractionMethodMenu) {
 				//special menu for selection of interaction methods
-				Debug.Log("Showing interaction method switch window.");
 				windowRect = new Rect(0, 0, Screen.width, Screen.height);
-				windowRect = GUILayout.Window(0, windowRect, showSwitchInteractionMethodMenu, "Show window");
+				windowRect = GUILayout.Window(0, windowRect, showSwitchInteractionMethodMenu, "Menu");
+				return;
+			}
+			else if(mIsInteractionMethodRestart)
+			{
+				//special restart menu for selection of interaction methods
+				windowRect = new Rect(0, 0, Screen.width, Screen.height);
+				windowRect = GUILayout.Window(1, windowRect, showSwitchInteractionMethodMenu, "Restart Game?");
+				return;
+			}
+			else if(mIsInteractionMethodRestartCredits)
+			{
+				//special restart menu for selection of interaction methods
+				windowRect = new Rect(0, 0, Screen.width, Screen.height);
+				windowRect = GUILayout.Window(2, windowRect, showSwitchInteractionMethodMenu, "Credits");
 				return;
 			}
 			
@@ -116,28 +132,78 @@ public abstract class MobileObjectSelectionBase: ObjectSelectionBase
 	/** show the interaction switch window */
 	private void showSwitchInteractionMethodMenu(int id) {
 		
-		//Get currently selected interaction method
-		MobileInteractionByTouch t = this.GetComponent<MobileInteractionByTouch>();
-		MobileInteractionByDeviceOrientation d = this.GetComponent<MobileInteractionByDeviceOrientation>();
-		string name = (t.enabled ? "DeviceOrientation" : "Touch");
-		
-		GUILayout.BeginVertical("box");
-		if (GUILayout.Button("Switch to " + name, GUILayout.MinHeight(50))) {
-			Debug.Log("Switch pressed");
+		if(id == 0)
+		{
+			//Get currently selected interaction method
+			MobileInteractionByTouch t = this.GetComponent<MobileInteractionByTouch>();
+			MobileInteractionByDeviceOrientation d = this.GetComponent<MobileInteractionByDeviceOrientation>();
+			string name = (t.enabled ? "DeviceOrientation" : "Touch");
 			
-			//switch selections
-			t.enabled = !t.enabled;
-			d.enabled = !d.enabled;
-			
-			mIsInteractionMethodMenu = false;
-			doGUIConfirm = false;
+			GUILayout.BeginVertical("box");
+			if (GUILayout.Button("Switch to " + name, GUILayout.MinHeight(50))) {
+				Debug.Log("Switch pressed");
+				
+				//switch selections
+				t.enabled = !t.enabled;
+				d.enabled = !d.enabled;
+				
+				mIsInteractionMethodMenu = false;
+				doGUIConfirm = false;
+			}
+			if (GUILayout.Button("Cancel", GUILayout.MinHeight(50))) {
+				Debug.Log("Cancel pressed");
+				mIsInteractionMethodMenu = false;
+				doGUIConfirm = false;
+			}
+			GUILayout.EndHorizontal();
 		}
-		if (GUILayout.Button("Cancel", GUILayout.MinHeight(50))) {
-			Debug.Log("Cancel pressed");
-			mIsInteractionMethodMenu = false;
-			doGUIConfirm = false;
+		else if(id == 1)
+		{			
+			GUILayout.BeginVertical("box");
+			if (GUILayout.Button("Kill the tower!", GUILayout.MinHeight(50))) {
+				Debug.Log("Restart Game pressed");
+				
+				//todo enable gravity
+				GameObject abrissbirne = GameObject.Find("abrissbirne");
+				Rigidbody rigit = abrissbirne.GetComponent<Rigidbody>();
+				rigit.useGravity = true; 
+				
+				mIsInteractionMethodRestart = false;
+				doGUIConfirm = false;
+			}
+			if (GUILayout.Button("Reload Game?", GUILayout.MinHeight(50))) {
+				Debug.Log("Reload Szene pressed");
+							
+				Application.LoadLevel(0);
+				
+				//TODO connect again?
+				
+				mIsInteractionMethodRestart = false;
+				doGUIConfirm = false;
+			}
+			if (GUILayout.Button("Cancel", GUILayout.MinHeight(50))) {
+				Debug.Log("Cancel pressed");
+				mIsInteractionMethodRestart = false;
+				doGUIConfirm = false;
+			}
+			GUILayout.EndHorizontal();	
 		}
-		GUILayout.EndHorizontal();
+		else if(id == 2)
+		{			
+			GUILayout.BeginVertical("box");
+			GUILayout.Space (5);
+			GUILayout.Label("ARJenga");
+			GUILayout.Label("FH-Hagenberg");
+			GUILayout.Label("Augmented Reality Project");
+			GUILayout.Label("(C) by Findling, Hoebarth, Klima");
+			GUILayout.Space (5);
+			if (GUILayout.Button("ok", GUILayout.MinHeight(50))) {
+				Debug.Log("ok pressed");
+				mIsInteractionMethodRestartCredits = false;
+				doGUIConfirm = false;
+			}
+			GUILayout.EndHorizontal();	
+		}
 	}
 	
 	/// <summary>
@@ -163,10 +229,24 @@ public abstract class MobileObjectSelectionBase: ObjectSelectionBase
 				GameObject collidee = getRaycastGameObjectWithObjectControllerFromUserTouch();
 				if(collidee != null && !collidees.ContainsKey(collidee.GetInstanceID())) {
 				
-					//check if this is our special object
+					//check if this is our special object - MENU
 					if(collidee == GameObject.Find("SwitchObject")) {
 						//set variable for showing special window
 						mIsInteractionMethodMenu = true;
+						doGUIConfirm = true;
+						return;
+					}
+					//RESTART
+					if(collidee == GameObject.Find("RestartObject")) {
+						//set variable for showing special window
+						mIsInteractionMethodRestart = true;
+						doGUIConfirm = true;
+						return;
+					}
+					//CREDITS
+					if(collidee == GameObject.Find("watermark")) {
+						//set variable for showing special window
+						mIsInteractionMethodRestartCredits = true;
 						doGUIConfirm = true;
 						return;
 					}
