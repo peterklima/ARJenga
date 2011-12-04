@@ -2,8 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ViennaUT_SDK\Interaction\InteractionFramework\MobileObjectSelectionBase.cs">
     <Files>
-      <File FileName="Assets\Qualcomm Augmented Reality\Scripts\VirtualButtonBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\ViennaUT_SDK\Interaction\InteractionFramework\MobileObjectSelectionBase.cs" Line="57" Column="84" />
+      <File FileName="Assets\ViennaUT_SDK\ObjectControllers\UserManagementObjectController.cs" Line="1" Column="1" />
+      <File FileName="Assets\StreamingAssets\QCAR\config.xml" Line="5" Column="7" />
+      <File FileName="Assets\Qualcomm Augmented Reality\Scripts\VirtualButtonBehaviour.cs" Line="554" Column="1" />
+      <File FileName="Assets\ViennaUT_SDK\Interaction\InteractionFramework\MobileObjectSelectionBase.cs" Line="267" Column="9" />
       <File FileName="Assets\Qualcomm Augmented Reality\Scripts\TrackableEventHandler.cs" Line="1" Column="1" />
       <File FileName="Assets\Qualcomm Augmented Reality\Scripts\IVirtualButtonEventHandler.cs" Line="10" Column="1" />
       <File FileName="Assets\Qualcomm Augmented Reality\Scripts\ImageTargetBehaviour.cs" Line="68" Column="9" />

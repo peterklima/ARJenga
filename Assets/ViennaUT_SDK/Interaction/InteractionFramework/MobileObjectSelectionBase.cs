@@ -237,8 +237,10 @@ public abstract class MobileObjectSelectionBase: ObjectSelectionBase
 		if(mVirtualButton1.Pressed)
 		{
 			Debug.Log("##### Virtual button pressed");
-			mIsInteractionMethodRestart = true;
-			doGUIConfirm = true;
+			//todo enable gravity
+			GameObject abrissbirne = GameObject.Find("abrissbirne");
+			Rigidbody rigit = abrissbirne.GetComponent<Rigidbody>();
+			rigit.useGravity = true; 
 			return;
 		}
 			
@@ -262,8 +264,11 @@ public abstract class MobileObjectSelectionBase: ObjectSelectionBase
 					//RESTART
 					if(collidee == GameObject.Find("RestartObject")) {
 						//set variable for showing special window
-						mIsInteractionMethodRestart = true;
-						doGUIConfirm = true;
+						//mIsInteractionMethodRestart = true;
+						//doGUIConfirm = true;
+						
+						Application.LoadLevel(0);
+						
 						return;
 					}
 					//CREDITS
